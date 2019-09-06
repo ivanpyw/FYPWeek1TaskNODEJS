@@ -1,0 +1,114 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+  <!-- Bootstrap core CSS -->
+<!-- Custom styles for this template -->
+<style>
+    h1 {
+        color: black;
+        font-family: 'Lato', sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 58px;
+
+    }
+
+    body {
+        padding-top: 4%;
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <% include ../partials/header %>
+
+        </header>
+
+
+        <div class="row">
+
+
+
+            <div class="col-lg-9">
+
+
+
+                <div class="row">
+
+                    <% test.forEach(function(testing) { %>
+                    <div class="col-lg-4" style="margin-top: 5%">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#"><%= testing.courseName %></a>
+                                </h4>
+                                <h5><%= testing.courseCode %></h5>
+                                <p class="card-text"><%= testing.courseDescription %></p>
+                               
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">
+                                    <%= testing.courseDateStart %>-<%=testing.courseDateEnd %>
+                                    <br>
+                                    Class Size: <%= testing.courseClassSize %>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+                  <!-- /.col-lg-9 -->
+            
+                </div>
+                <!-- /.row -->
+            </div>
+              
+
+        <!-- <h1>Available Courses</h1>
+        <table style="width:100%" class="table table-striped">
+            <tr id="tr">
+                <th>Course Code:</th>
+                <th>Course Name:</th>
+                <th>Course Description:</th>
+                <th>Course Class Size</th>
+                <th>Course Date Start:</th>
+                <th>Course Date End:</th>
+        
+            </tr>
+            <% test.forEach(function(testing) { %>
+            <tr>
+                <td> <%= testing.courseCode %></td>
+                <td> <%= testing.courseName %></td>
+                <td> <%= testing.courseDescription %></td>
+                <td> <%= testing.courseClassSize %></td>
+                <td> <%= testing.courseDateStart %></td>
+                <td> <%= testing.courseDateEnd %></td>
+            </tr>
+            <% }); %>
+        </table> -->
+
+    
+  
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+
+</html>
